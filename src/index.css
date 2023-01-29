@@ -1,13 +1,212 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* --primary: #6b9080;
+  --secondary: #1b263b;
+  --tertiary: #a4c3b2;
+  --border: #4a4e69; */
+
+  --primary: #0d1b2a;
+  --secondary: #fcbf49;
+  --tertiary: #003566;
+  --border: #f5ebe0;
+}
+
+html {
+  font-size: 22px;
+}
+
+body {
+  /* background-color: #faf0ca; */
+  background-color: #ef8354;
+  min-height: 100vh;
+  font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: 3px solid var(--border);
+  border-radius: 3px;
+  margin: auto;
+}
+
+header {
+  width: 100%;
+  padding: 0 0.25em;
+  background-color: var(--primary);
+  color: var(--secondary);
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: var(--tertiary);
+  color: var(--secondary);
+  width: 100%;
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-start;
+  /* justify-content: center; */
+  align-items: center;
+  overflow-y: auto;
+}
+
+footer {
+  width: 100%;
+  padding: 0.25em;
+  background-color: var(--primary);
+  color: var(--secondary);
+  display: grid;
+  place-content: center;
+}
+
+ul {
+  width: 100%;
+  list-style: none;
+  padding: 0 0.25rem 0.25rem;
+}
+
+ul li::before {
+  content: '\200B';
+}
+
+.item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  margin: 0.25rem 0;
+  background-color: var(--primary);
+}
+
+.item:first-child {
+  margin: 0;
+}
+
+.item input[type='checkbox'] {
+  text-align: center;
+  width: 2.5rem;
+  width: 32px;
+  min-width: 32px;
+  height: 2.5rem;
+  height: 32px;
+  min-height: 32px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  accent-color: var(--secondary);
+}
+
+/* .item input[type="checkbox"]:focus + label {
+  text-decoration: underline;
+} */
+
+.item > label {
+  /* font-size: 0.75rem; */
+  font-size: 1rem;
+  flex-grow: 1;
+}
+
+.item svg {
+  width: 48px;
+  min-width: 48px;
+  height: 36px;
+  font-size: 1rem;
+  color: var(--tertiary);
+  cursor: pointer;
+}
+
+.item svg:focus,
+.item svg:hover {
+  color: #bc4749;
+  outline: none;
+}
+
+.addForm {
+  background-color: var(--tertiary);
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  /* margin: 0.5rem 0 0; */
+  padding: 0.25rem 0.5rem 0.25rem;
+  /* border-bottom: 1px solid #eee; */
+}
+
+.addForm label {
+  position: absolute;
+  /* To hide the label */
+  left: -99999px;
+}
+
+.addForm input[type='text'] {
+  background-color: #faf0ca;
+  flex-grow: 1;
+  max-width: calc(100% - 50px);
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  margin-right: 0.25rem;
+  outline: none;
+}
+
+button {
+  height: 48px;
+  min-width: 48px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: var(--primary);
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+button:focus,
+button:hover {
+  color: whitesmoke;
+  background-color: #a7c957;
+  outline: none;
+}
+
+.searchForm {
+  background-color: var(--tertiary);
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  /* margin: 0.25rem 0 0; */
+  padding: 0.25rem 0.5rem 0.25rem;
+  /* border-bottom: 1px solid #eee; */
+}
+
+.searchForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+.searchForm input[type='text'] {
+  background-color: #faf0ca;
+  flex-grow: 1;
+  max-width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  outline: none;
 }
