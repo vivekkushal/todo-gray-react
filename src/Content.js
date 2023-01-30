@@ -4,7 +4,7 @@ function Content(props) {
   const { items, handleCheck, handleDelete } = props;
 
   return (
-    <main>
+    <>
       {items.length ? (
         <ItemList
           items={items}
@@ -14,7 +14,7 @@ function Content(props) {
       ) : (
         <p>Nothing to look here 😎</p>
       )}
-    </main>
+    </>
   );
 }
 
